@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ApplicationPokemon</string>
+
+    <!--Bottom Nav -->
+
+    <!--Pokemon Fragment -->
+    <string name="pokemon_fragmen_title_action_bar">Pokémon</string>
+
+    <!--MyPokemon Fragment -->
+    <string name="my_pokemon_fragmen_title_action_bar">Meus Pokémon</string>
+
+    <!--Settings Fragment -->
+    <string name="settings_fragmen_title_action_bar">Configurações</string>
+
+
+</resources>

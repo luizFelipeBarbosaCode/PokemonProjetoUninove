@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/pokemonFragment"
+        android:icon="@drawable/ic_pikachu"
+
+        android:title="" />
+
+    <item
+        android:id="@+id/myPokemonFragment"
+        android:icon="@drawable/ic_pokebag"
+        android:title=""/>
+
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_instinct"
+        android:title=""/>
+
+
+</menu>
