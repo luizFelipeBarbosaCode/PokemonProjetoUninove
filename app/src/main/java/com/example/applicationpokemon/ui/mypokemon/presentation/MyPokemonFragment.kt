@@ -24,12 +24,12 @@ class MyPokemonFragment: BaseFragment(R.layout.my_pokemon_fragment) {
         setupRecyclerView()
 
 
-        podemonAdapter.setOnItemClickListener {article ->
+        podemonAdapter.setOnItemClickListener {pokemon ->
             val bundle = Bundle().apply {
-                putSerializable("article", article)
+                putSerializable("pokemon", pokemon)
             }
             findNavController().navigate(
-                R.id.action_savesNewsFragment_to_articleFragment,
+                R.id.action_savesNewsFragment_to_detailFragment,
                 bundle
             )
         }
@@ -48,7 +48,7 @@ class MyPokemonFragment: BaseFragment(R.layout.my_pokemon_fragment) {
                 val position = viewHolder.adapterPosition
                 val pokemon = podemonAdapter.differ.currentList[position]
                 viewModel.deletePokemon(pokemon)
-                Snackbar.make(view, "Successfully deleted article", Snackbar.LENGTH_LONG).apply {
+                Snackbar.make(view, "Successfully deleted Pokemon", Snackbar.LENGTH_LONG).apply {
                     setAction("Undo") {
                         viewModel.savePokemon(pokemon)
                     }
@@ -61,8 +61,8 @@ class MyPokemonFragment: BaseFragment(R.layout.my_pokemon_fragment) {
             attachToRecyclerView(rvSavedPokemon)
         }
 
-        viewModel.getSavedPokemon().observe(viewLifecycleOwner, Observer { articles ->
-            podemonAdapter.differ.submitList(articles)
+        viewModel.getSavedPokemon().observe(viewLifecycleOwner, Observer { pokemon ->
+            podemonAdapter.differ.submitList(pokemon)
         })
 
     }

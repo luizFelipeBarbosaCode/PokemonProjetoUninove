@@ -23,7 +23,7 @@
         tools:layout="@layout/my_pokemon_fragment">
 
         <action
-            android:id="@+id/action_savesNewsFragment_to_articleFragment"
+            android:id="@+id/action_savesNewsFragment_to_detailFragment"
             app:destination="@id/detailPokemonFragment"
            />
     </fragment>

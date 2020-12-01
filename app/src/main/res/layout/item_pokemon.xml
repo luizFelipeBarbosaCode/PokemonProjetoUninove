@@ -28,6 +28,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/item_pokemon_img" />
 
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

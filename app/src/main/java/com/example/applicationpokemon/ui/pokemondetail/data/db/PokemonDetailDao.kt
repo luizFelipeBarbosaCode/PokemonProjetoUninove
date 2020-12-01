@@ -8,7 +8,7 @@ import com.example.applicationpokemon.ui.pokemon.data.model.Pokemon
 interface PokemonDetailDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(article: Pokemon): Long
+    suspend fun upsert(pokemon: Pokemon): Long
 
     @Query("SELECT * FROM pokemon")
     fun getAllPokemon() : LiveData<List<Pokemon>>
