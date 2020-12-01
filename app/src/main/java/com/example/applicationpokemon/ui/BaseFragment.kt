@@ -10,9 +10,11 @@ open class BaseFragment (@LayoutRes contentLayoutId: Int) : Fragment(contentLayo
 
     lateinit var viewModel: PokemonViewModel
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as MainActivity).viewModel
+
     }
 
 }

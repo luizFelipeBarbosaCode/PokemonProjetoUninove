@@ -51,11 +51,16 @@ class PokemonAdapter : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() 
                 crossfade(true)
                 crossfade(500)
             }
-            item_pokemon_no_like.setOnClickListener() {
-                item_pokemon_like.visibility = View.VISIBLE
-                item_pokemon_no_like.visibility = View.GONE
+            setOnClickListener {
+                onItemClickListener?.let { it(pokemon) }
             }
         }
+    }
+
+    private var onItemClickListener: ((Pokemon) -> Unit)? = null
+
+    fun setOnItemClickListener(listener: (Pokemon) -> Unit) {
+        onItemClickListener = listener
     }
 
     override fun getItemCount(): Int {

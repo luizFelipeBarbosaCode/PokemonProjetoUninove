@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         val viewmodelProviderFactory = PokemonViewModelProviderFactory(application, repository)
         viewModel = ViewModelProvider(this, viewmodelProviderFactory).get(PokemonViewModel::class.java)
+
         bottom_nav.setItemIconTintList(null);
         bottom_nav.setupWithNavController((nav_host_fragment.findNavController()))
 

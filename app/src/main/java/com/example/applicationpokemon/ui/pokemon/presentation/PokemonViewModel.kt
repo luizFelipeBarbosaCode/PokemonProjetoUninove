@@ -12,6 +12,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.applicationpokemon.core.utils.Resource
 import com.example.applicationpokemon.ui.GenericRecylerAdapter
 import com.example.applicationpokemon.ui.MyApplication
+import com.example.applicationpokemon.ui.pokemon.data.model.Pokemon
 import com.example.applicationpokemon.ui.pokemon.data.model.PokemonResposta
 import com.example.applicationpokemon.ui.pokemon.data.repository.PokemonRepository
 import kotlinx.coroutines.launch
@@ -95,5 +96,15 @@ class PokemonViewModel(app: Application, val pokemonRepository: PokemonRepositor
             }
         }
         return false
+    }
+
+    fun savePokemon(pokemon: Pokemon) = viewModelScope.launch {
+        pokemonRepository.upsert(pokemon)
+    }
+
+    fun getSavedPokemon() = pokemonRepository.getSavesPokemon()
+
+    fun deletePokemon(pokemon: Pokemon) = viewModelScope.launch {
+        pokemonRepository.deletePokemon(pokemon)
     }
 }

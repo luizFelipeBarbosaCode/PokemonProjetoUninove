@@ -5,13 +5,11 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.applicationpokemon.R
 import com.example.applicationpokemon.core.utils.Resource
 import com.example.applicationpokemon.ui.BaseFragment
-import kotlinx.android.synthetic.main.item_pokemon.*
-import kotlinx.android.synthetic.main.item_pokemon.view.*
 import kotlinx.android.synthetic.main.pokemon_fragment.*
 
 class PokemonFragment : BaseFragment(R.layout.pokemon_fragment) {
@@ -24,7 +22,15 @@ class PokemonFragment : BaseFragment(R.layout.pokemon_fragment) {
 
         setupRecyclerView()
 
-
+        pokemonAdapter.setOnItemClickListener {pokemon ->
+            val bundle = Bundle().apply {
+                putSerializable("pokemon", pokemon)
+            }
+            findNavController().navigate(
+                R.id.action_pokemonFragment_to_detailPokemonFragment,
+                bundle
+            )
+        }
 
 
         viewModel.pokemonList.observe(viewLifecycleOwner, Observer { response ->
@@ -32,14 +38,6 @@ class PokemonFragment : BaseFragment(R.layout.pokemon_fragment) {
                 is Resource.Success -> {
                     response.data?.let { pokemonResponse ->
                         pokemonAdapter.differ.submitList(pokemonResponse.results)
-//                        val dados = pokemonResponse.results
-//                        pokemon_fragment_recycler_view.adapter =
-//                            context?.let { PokemonAdapter(context = it,dados) }
-//
-//                        pokemon_fragment_recycler_view.layoutManager =
-//                            androidx.recyclerview.widget.GridLayoutManager(context,
-//                                2
-//                            )
 
                     }
                 }

@@ -11,16 +11,37 @@
         android:label="@string/pokemon_fragmen_title_action_bar"
         tools:layout="@layout/pokemon_fragment">
 
+        <action
+            android:id="@+id/action_pokemonFragment_to_detailPokemonFragment"
+            app:destination="@id/detailPokemonFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/myPokemonFragment"
-        android:name="com.example.applicationpokemon.ui.mypokemon.MyPokemonFragment"
+        android:name="com.example.applicationpokemon.ui.mypokemon.presentation.MyPokemonFragment"
         android:label="@string/my_pokemon_fragmen_title_action_bar"
-        tools:layout="@layout/my_pokemon_fragment" />
+        tools:layout="@layout/my_pokemon_fragment">
+
+        <action
+            android:id="@+id/action_savesNewsFragment_to_articleFragment"
+            app:destination="@id/detailPokemonFragment"
+           />
+    </fragment>
 
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.applicationpokemon.ui.settings.presentation.SettingsFragment"
         android:label="@string/settings_fragmen_title_action_bar"
-        tools:layout="layout/"/>
+        tools:layout="layout/" />
+
+
+    <fragment
+        android:id="@+id/detailPokemonFragment"
+        android:name="com.example.applicationpokemon.ui.pokemondetail.presentation.PokemonDetailFragment"
+        android:label="Detalhes"
+        tools:layout="@layout/pokemon_detail_fragment">
+        <argument
+            android:name="pokemon"
+            app:argType="com.example.applicationpokemon.ui.pokemon.data.model.Pokemon" />
+    </fragment>
 </navigation>

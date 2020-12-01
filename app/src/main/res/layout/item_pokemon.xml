@@ -29,30 +29,5 @@
         app:layout_constraintTop_toBottomOf="@+id/item_pokemon_img" />
 
 
-    <ImageView
-        android:id="@+id/item_pokemon_no_like"
-        android:layout_width="22dp"
-        android:layout_height="25dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="6dp"
-        android:src="@drawable/ic_no_like"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_pokemon_img" />
-
-    <ImageView
-        android:id="@+id/item_pokemon_like"
-        android:layout_width="22dp"
-        android:layout_height="25dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="6dp"
-        android:src="@drawable/ic_like"
-        android:layout_marginEnd="10dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_pokemon_img" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
