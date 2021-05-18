@@ -1,20 +1,12 @@
 package com.example.applicationpokemon.ui.pokemondetail.presentation
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import coil.load
 import com.example.applicationpokemon.R
 import com.example.applicationpokemon.core.utils.Constrants
 import com.example.applicationpokemon.ui.BaseFragment
-import com.example.applicationpokemon.ui.MainActivity
-import com.example.applicationpokemon.ui.mypokemon.presentation.MyPokemonViewModel
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.item_pokemon.view.*
 import kotlinx.android.synthetic.main.pokemon_detail_fragment.*
 
 class PokemonDetailFragment  : BaseFragment(R.layout.pokemon_detail_fragment)
