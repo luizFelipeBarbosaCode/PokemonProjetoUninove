@@ -10,5 +10,5 @@ Projeto em Kotlin utilizando MVVM e Arquitetura Limpa, Api utilizada foi do Poke
 - Kathlyn de Oliveira Lopes Pires RA:919208446
 - Samuel Luiz dos Santos Nunes RA:919208382
 - Thalys David Gomes Ferreira RA:919207186
-- Vitor Lunardi Sporkens de Moura RA:30201
+- Vitor Lunardi Sporkens de Moura RA:3020109314
 
